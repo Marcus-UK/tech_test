@@ -1,2 +1,2 @@
-class kitten_finder
+class Kitten_finder
 end
