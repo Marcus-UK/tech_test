@@ -13,10 +13,6 @@ So that I know where to look for the lost kittens,
 I want to be able to access a list of directions from the forensics API.
 
 As an investigator,
-So that I  can easily follow the instructions,
-I want them to be stored in an array.
-
-As an investigator,
 So that I can head in the right direction,
 I want to be able to turn 90 degrees to the right when instructed.
 
