@@ -64,4 +64,37 @@ describe Kitten_finder do
       expect(kitten.current_direction).to eq "North"
     end
   end
+
+  describe '#current_location' do
+
+    it 'starts with a location of 0,0' do
+      expect(kitten.current_location).to eq [0,0]
+    end
+  end
+
+  describe '#move_forwards' do
+
+    it 'moves you forwards one square North when you are facing North' do
+      kitten.move_forward
+      expect(kitten.current_location).to eq [0, 1]
+    end
+
+    it 'moves South one square when facing South' do
+      kitten.current_direction = 'South'
+      kitten.move_forward
+      expect(kitten.current_location). to eq [0, -1]
+    end
+
+    it 'moves East one square when facing East' do
+      kitten.current_direction = 'East'
+      kitten.move_forward
+      expect(kitten.current_location). to eq [1, 0]
+    end
+
+    it 'moves West one square when facing West' do
+      kitten.current_direction = 'West'
+      kitten.move_forward
+      expect(kitten.current_location). to eq [-1, 0]
+    end
+  end
 end

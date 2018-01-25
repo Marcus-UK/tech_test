@@ -7,7 +7,26 @@ class Kitten_finder
     @api = api
     @directions = ["North", "East", "South", "West"]
     @current_direction = "North"
+    @x_location = 0
+    @y_location = 0
   end
+
+  def current_location
+    [@x_location, @y_location]
+  end
+
+  def move_forward
+    case @current_direction
+    when "North"
+      @y_location += 1
+    when "South"
+      @y_location -= 1
+    when "East"
+      @x_location += 1
+    when "West"
+      @x_location -= 1
+    end
+  end 
 
   def change_direction_right
     index = get_direction_index
