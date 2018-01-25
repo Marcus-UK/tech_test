@@ -97,4 +97,11 @@ describe Kitten_finder do
       expect(kitten.current_location). to eq [-1, 0]
     end
   end
+
+  describe '#locate_kittens' do
+
+    it 'uses instructions to update x and y locations' do
+      expect(kitten.locate_kittens).to eq [1, 2]
+    end
+  end
 end

@@ -11,6 +11,20 @@ class Kitten_finder
     @y_location = 0
   end
 
+  def locate_kittens
+    @api.retrieve_directions.each do |instruction|
+      case instruction
+      when 'forward'
+        move_forward
+      when 'left'
+        change_direction_left
+      when 'right'
+        change_direction_right
+      end
+    end
+    current_location
+  end
+
   def current_location
     [@x_location, @y_location]
   end
@@ -26,7 +40,7 @@ class Kitten_finder
     when "West"
       @x_location -= 1
     end
-  end 
+  end
 
   def change_direction_right
     index = get_direction_index
