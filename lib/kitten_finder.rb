@@ -15,6 +15,12 @@ class Kitten_finder
     @current_direction = @directions[index]
   end
 
+  def change_direction_left
+    index = get_direction_index
+    index > 0 ? index -= 1 : index = 3
+    @current_direction = @directions[index]
+  end
+
   private
 
   def get_direction_index

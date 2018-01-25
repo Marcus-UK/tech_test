@@ -38,4 +38,30 @@ describe Kitten_finder do
       expect(kitten.current_direction).to eq "North"
     end
   end
+
+  describe '#change_direction_left' do
+
+    it 'turns you to face west from a starting direction of North' do
+        kitten.change_direction_left
+        expect(kitten.current_direction).to eq "West"
+    end
+
+    it 'turns you to face South from a starting point of West' do
+      kitten.current_direction = 'West'
+      kitten.change_direction_left
+      expect(kitten.current_direction).to eq "South"
+    end
+
+    it 'turns you to face East from a starting point of South' do
+      kitten.current_direction = 'South'
+      kitten.change_direction_left
+      expect(kitten.current_direction).to eq "East"
+    end
+
+    it 'turns you to face North from a starting point of East' do
+      kitten.current_direction = 'East'
+      kitten.change_direction_left
+      expect(kitten.current_direction).to eq "North"
+    end
+  end
 end
