@@ -1,3 +1,5 @@
+require_relative 'forensics_api'
+
 class Kitten_finder
 
   attr_reader :directions
@@ -23,6 +25,10 @@ class Kitten_finder
       end
     end
     current_location
+  end
+
+  def confirm_kitten_location
+    @api.submit_kitten_location(@x_location, @y_location)
   end
 
   def current_location

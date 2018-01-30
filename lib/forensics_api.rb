@@ -12,4 +12,9 @@ attr_reader :api_url
     response = HTTParty.get(@api_url)
     response.parsed_response["directions"]
   end
-end 
+
+  def submit_kitten_location(x_location, y_location)
+    response= HTTParty.get("http://which-technical-exercise.herokuapp.com/api/mrands@hotmail.co.uk/location/#{x_location}/#{y_location}")
+    response.body
+  end
+end
