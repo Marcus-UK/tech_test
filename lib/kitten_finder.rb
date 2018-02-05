@@ -30,14 +30,10 @@ class Kitten_finder# works out the location of kittens based on directions passe
 
   def move_forward
     case @current_direction
-    when "North"
-      @y_location += 1
-    when "South"
-      @y_location -= 1
-    when "East"
-      @x_location += 1
-    when "West"
-      @x_location -= 1
+    when "North" then @y_location += 1
+    when "South" then @y_location -= 1
+    when "East" then @x_location =+ 1
+    when "West" then @x_location -= 1
     end
   end
 
@@ -65,12 +61,9 @@ class Kitten_finder# works out the location of kittens based on directions passe
 
   def instruction_guide(instruction)
     case instruction
-    when 'forward'
-      move_forward
-    when 'left'
-      change_direction_left
-    when 'right'
-      change_direction_right
+    when 'forward' then move_forward
+    when 'left' then change_direction_left
+    when 'right' then change_direction_right
     end
   end
 end
