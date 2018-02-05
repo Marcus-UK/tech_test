@@ -1,4 +1,4 @@
-#Kitten finder tech test
+# Kitten finder tech test
 
 This is attempt at the Which technical test. It is ruby application that is
 intended to be run from the command line. I have used BDD principles to
