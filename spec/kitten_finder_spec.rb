@@ -21,21 +21,21 @@ describe Kitten_finder do
     end
 
     it 'turns you to face South from a starting point of East' do
-      kitten.current_direction = 'East'
-      kitten.change_direction_right
-      expect(kitten.current_direction).to eq "South"
+      kitten_east = Kitten_finder.new(api_dbl, 'East')
+      kitten_east.change_direction_right
+      expect(kitten_east.current_direction).to eq "South"
     end
 
     it 'turns you to face West from a starting point of South' do
-      kitten.current_direction = 'South'
-      kitten.change_direction_right
-      expect(kitten.current_direction).to eq "West"
+      kitten_south = Kitten_finder.new(api_dbl, 'South')
+      kitten_south.change_direction_right
+      expect(kitten_south.current_direction).to eq "West"
     end
 
     it 'turns you to face North from a starting point of West' do
-      kitten.current_direction = "West"
-      kitten.change_direction_right
-      expect(kitten.current_direction).to eq "North"
+      kitten_west = Kitten_finder.new(api_dbl, 'West')
+      kitten_west.change_direction_right
+      expect(kitten_west.current_direction).to eq "North"
     end
   end
 
@@ -47,21 +47,21 @@ describe Kitten_finder do
     end
 
     it 'turns you to face South from a starting point of West' do
-      kitten.current_direction = 'West'
-      kitten.change_direction_left
-      expect(kitten.current_direction).to eq "South"
+      kitten_west = Kitten_finder.new(api_dbl, 'West')
+      kitten_west.change_direction_left
+      expect(kitten_west.current_direction).to eq "South"
     end
 
     it 'turns you to face East from a starting point of South' do
-      kitten.current_direction = 'South'
-      kitten.change_direction_left
-      expect(kitten.current_direction).to eq "East"
+      kitten_south = Kitten_finder.new(api_dbl, 'South')
+      kitten_south.change_direction_left
+      expect(kitten_south.current_direction).to eq "East"
     end
 
     it 'turns you to face North from a starting point of East' do
-      kitten.current_direction = 'East'
-      kitten.change_direction_left
-      expect(kitten.current_direction).to eq "North"
+      kitten_east = Kitten_finder.new(api_dbl, 'East')
+      kitten_east.change_direction_left
+      expect(kitten_east.current_direction).to eq "North"
     end
   end
 
@@ -80,21 +80,21 @@ describe Kitten_finder do
     end
 
     it 'moves South one square when facing South' do
-      kitten.current_direction = 'South'
-      kitten.move_forward
-      expect(kitten.current_location). to eq [0, -1]
+      kitten_south = Kitten_finder.new(api_dbl, 'South')
+      kitten_south.move_forward
+      expect(kitten_south.current_location). to eq [0, -1]
     end
 
     it 'moves East one square when facing East' do
-      kitten.current_direction = 'East'
-      kitten.move_forward
-      expect(kitten.current_location). to eq [1, 0]
+      kitten_east = Kitten_finder.new(api_dbl, 'East')
+      kitten_east.move_forward
+      expect(kitten_east.current_location). to eq [1, 0]
     end
 
     it 'moves West one square when facing West' do
-      kitten.current_direction = 'West'
-      kitten.move_forward
-      expect(kitten.current_location). to eq [-1, 0]
+      kitten_west = Kitten_finder.new(api_dbl, 'West')
+      kitten_west.move_forward
+      expect(kitten_west.current_location). to eq [-1, 0]
     end
   end
 

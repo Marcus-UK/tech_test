@@ -2,22 +2,22 @@ require_relative 'forensics_api'
 
 class Kitten_finder# works out the location of kittens based on directions passed.
 
-  attr_reader :directions
-  attr_accessor :current_direction
+  attr_reader :directions, :current_direction
 
-  def initialize(api = Forensics_api.new)#initialize kitten_finder class with an instance of api
+
+  def initialize(api = Forensics_api.new, current_direction = 'North')#initialize kitten_finder class with an instance of api
     @api = api #instance of api
     @directions = ["North", "East", "South", "West"]#array of four possible directions a searcher can be facing
-    @current_direction = "North" #starting direction . Hard coded
+    @current_direction = current_direction #starting direction . Hard coded
     @x_location = 0 #start location on x-axis
     @y_location = 0 #start location on y-axis
   end
 
-  def locate_kittens # updates x and y locations based on instructions passed.
-    @api.retrieve_directions.each do |instruction| # returns array of directions passed by api retrieve_directions method. Then iterates through array.
+  def locate_kittens
+    @api.retrieve_directions.each do |instruction|
       instruction_guide(instruction)
     end
-    current_location #method returns an array, with the two values for x and y locations.
+    current_location
   end
 
   def confirm_kitten_location # makes a call to the api class to call submit location and return confirmation.
